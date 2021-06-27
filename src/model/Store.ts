@@ -4,8 +4,11 @@ import produce from 'immer'
 
 export type StoreState = {
   count: number,
-  uname: string,
-  upass: string,
+  auth: {
+    username: string,
+    password: string,
+  },
+  displayName: string,
   lightbox: {
     images: any[]
     idx: number
@@ -16,8 +19,11 @@ export type StoreState = {
 
 export const defaultStore: StoreState = {
   count: 0,
-  uname: "",
-  upass: "",
+  auth: {
+    username: "",
+    password: "",
+  },
+  displayName: "",
   lightbox: {
     images: [],
     idx: 0,

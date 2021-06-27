@@ -9,7 +9,7 @@ interface Props {
 
 export default function AppHeader({showLoginModal}: Props): ReactElement {
   
-  const uname = useStore(s => s.uname)
+  const uname = useStore(s => s.displayName)
   
   return (
     <div className="d-flex flex-row">

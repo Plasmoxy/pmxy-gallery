@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useStore } from '../model/Store'
 import {apiGet, apiPost, apiDelete, APPHOST} from './api'
 
 
@@ -39,7 +40,8 @@ export async function uploadImage(galleryPath: string, file: any) {
   const config = {
       headers: {
           'Content-Type': 'multipart/form-data'
-      }
+      },
+      auth: useStore.getState().auth
   }
   
   return axios.post(url, formData, config)

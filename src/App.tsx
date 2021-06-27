@@ -31,7 +31,7 @@ const routes = [
 function App() {
 
   const history = useHistory()
-  const [showLoginModal, hideLoginModal] = useAppModal(() => <LoginCard />)
+  const [showLoginModal, hideLoginModal] = useAppModal(() => <LoginCard closeParent={hideLoginModal} />)
 
   useEffect(() => {
     return history.listen((loc, action) => {

@@ -4,6 +4,7 @@ import { useStore } from '../model/Store'
 import { AppModal } from './AppModal'
 
 export function ErrorModal(props: {}) {
+  
   const errorModals = useStore(s => s.errorModals)
   const update = useStore(s => s.update)
   
