@@ -18,6 +18,8 @@ import { PhotosPage } from './pages/PhotosPage'
 import { AppLightbox } from './components/AppLightbox'
 import { ErrorModal } from './components/ErrorModal'
 import { Button } from 'react-bootstrap'
+import { useAppModal } from './components/AppModal'
+import LoginCard from './components/LoginCard'
 
 const routes = [
   { path: "/", component: GalleriesPage },
@@ -28,6 +30,7 @@ const routes = [
 function App() {
 
   const history = useHistory()
+  const [showLoginModal, hideLoginModal] = useAppModal(() => <LoginCard />)
 
   useEffect(() => {
     return history.listen((loc, action) => {
@@ -39,8 +42,8 @@ function App() {
   }, [history])
 
   return <>
+  
     <ReactQueryDevtools />
-    
     <AppLightbox />
     <ErrorModal />
   
@@ -61,7 +64,7 @@ function App() {
         
         <div className="d-flex flex-row flex-grow-1 justify-content-end">
           <a href="https://github.com/Plasmoxy/pmxy-gallery" className="text-light mx-5 mt-auto mb-auto">Source code</a>
-          <Button variant="secondary">Prihlásiť sa</Button>
+          <Button variant="secondary" onClick={showLoginModal}>Prihlásiť sa</Button>
         </div>
       </div>
      
