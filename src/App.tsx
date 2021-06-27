@@ -10,7 +10,7 @@ import 'regenerator-runtime/runtime'
 import './App.scss'
 import nightcityJpg from './images/nightcity.jpg'
 import northernImage from './images/northern.png'
-import cameraSvg from './icons/camera.svg'
+
 import { BrowserRouter, Route, useHistory } from 'react-router-dom'
 import { PageHeader } from './components/PageHeader'
 import { TestPage } from './pages/TestPage'
@@ -20,6 +20,7 @@ import { ErrorModal } from './components/ErrorModal'
 import { Button } from 'react-bootstrap'
 import { useAppModal } from './components/AppModal'
 import LoginCard from './components/LoginCard'
+import AppHeader from './components/AppHeader'
 
 const routes = [
   { path: "/", component: GalleriesPage },
@@ -55,18 +56,7 @@ function App() {
       
       
       {/* Header */}
-      <div className="d-flex flex-row">
-        
-        <div className="d-flex flex-row flex-grow-1 text-light">
-          <img className="mt-auto mb-auto pr-3" src={cameraSvg} />
-          <h1 className="mt-auto mb-auto">PMXY GALLERY</h1>
-        </div>
-        
-        <div className="d-flex flex-row flex-grow-1 justify-content-end">
-          <a href="https://github.com/Plasmoxy/pmxy-gallery" className="text-light mx-5 mt-auto mb-auto">Source code</a>
-          <Button variant="secondary" onClick={showLoginModal}>Prihlásiť sa</Button>
-        </div>
-      </div>
+      <AppHeader showLoginModal={showLoginModal} />
      
       {/* Routing */}
       {routes.map(r => <Route key={r.path} exact path={r.path}>{({ match }) => (
