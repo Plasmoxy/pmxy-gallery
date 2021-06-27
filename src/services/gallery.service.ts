@@ -40,8 +40,7 @@ export async function uploadImage(galleryPath: string, file: any) {
   const config = {
       headers: {
           'Content-Type': 'multipart/form-data'
-      },
-      auth: useStore.getState().auth
+      }
   }
   
   return axios.post(url, formData, config)
