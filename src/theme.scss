@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+// main theme scss header with all necessary imports
+$theme-colors: (
+  "primary": #42C88D
+);
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+

@@ -1,0 +1,40 @@
+@import '../theme.scss';
+
+.app-modal {
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  
+  .app-modal-content {    
+    // width: 500px; // nope, set it inside code!
+    @include media-breakpoint-down(sm) {
+      width: 90%;
+    }
+  }
+  
+  .app-modal-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
+    
+    margin-bottom: 10px;
+    margin-right: 3px;
+    
+    font-family: 'Roboto Light';
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+  }
+}

@@ -1,0 +1,119 @@
+@charset 'utf-8';
+@import "theme.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "transitions.scss";
+
+* { box-sizing: border-box;}
+
+*:focus { outline: none; }
+
+body {
+  background-color: #eee;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Medium', Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  
+  // user select disable
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.card {
+  border: none;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 8px 0 rgba(black, 0.2);
+}
+
+input, input:focus {
+  outline: none;
+  border: none;
+}
+
+// some margin on small devices
+@include media-breakpoint-down(sm) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 1.3rem;
+  letter-spacing: 0.13rem;
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.08rem;
+}
+hr {
+  border: none;
+  border-top: 0.13rem solid rgba(white, 0.4);
+}
+
+.text-grey {
+  color: #555555;
+}
+
+.background-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  
+  img {
+    width: 150%;
+    height: 150%;
+    margin: -60px;
+    filter: blur(8px);
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+}
+
+.content-container {
+  position: relative;
+  margin-top: 60px;
+}
+
+.content-page {
+  position: absolute;
+  margin-top: 70px;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

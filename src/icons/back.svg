@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f9f9f9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="back_icon" data-name="back icon" class="cls-1" d="M249,173H234.83l3.58-3.59L237,168l-6,6,6,6,1.41-1.41L234.83,175H249v-2Z" transform="translate(-231 -168)"/>
+</svg>

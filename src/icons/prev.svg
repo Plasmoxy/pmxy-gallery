@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 15 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f9f9f9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="prev_icon" data-name="prev icon" class="cls-1" d="M408.157,552l2.856-2.82L401.736,540l9.277-9.18L408.157,528,396,540Z" transform="translate(-396 -528)"/>
+</svg>

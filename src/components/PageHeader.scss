@@ -1,0 +1,19 @@
+
+.page-header {
+  user-select: none;
+  
+  .back-button {
+    transition: transform 300ms;
+  }
+  
+  &:hover.pointer {
+    cursor: pointer;
+    .back-button {
+      transform: scale(1.2);
+    }
+  }
+  
+  .back-title {
+    margin: 2px 0 0 15px;
+  }
+}
