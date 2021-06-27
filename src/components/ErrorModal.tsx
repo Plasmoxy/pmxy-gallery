@@ -1,20 +1,30 @@
 import React, {useState} from 'react'
+import { Card } from 'react-bootstrap'
 import { useStore } from '../model/Store'
 import { AppModal } from './AppModal'
 
 export function ErrorModal(props: {}) {
-  const errorModal = useStore(s => s.errorModal)
+  const errorModals = useStore(s => s.errorModals)
   const update = useStore(s => s.update)
+  
+  const [msg, setMsg] = useState("") // intermediate msg
+  
+  if (errorModals.length > 0 && msg !== errorModals[0]) {
+    setMsg(errorModals[0])
+  }
   
   return <AppModal
       width={500}
-      open={errorModal !== ""}
+      open={errorModals.length > 0}
       onExited={() => {}}
       onClosed={() => update(
-        s => {s.errorModal = ""}
+        s => {s.errorModals.pop()}
       )}>
-    <div className="text-white">
-      {errorModal}
-    </div>
+    <Card className="p-4">
+      <h1 className="text-danger">Chyba!</h1>
+      <div className="my-2">
+        {msg}
+      </div>
+    </Card>
   </AppModal>
 }

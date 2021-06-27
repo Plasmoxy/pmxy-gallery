@@ -64,7 +64,7 @@ export function GalleriesPage() {
 
   return <>
     <PageHeader title="Kategórie" backButton={false} />
-    <button onClick={() => update(s => {s.errorModal = "YEET"})}>YET</button>
+    <button onClick={() => update(s => {s.errorModals.push("YEET")})}>YET</button>
     
     {qGalleries.isSuccess &&
       <Row>
@@ -78,7 +78,7 @@ export function GalleriesPage() {
                   try {
                     await gservice.deleteGallery(encodeURI(gallery.name))
                   } catch(e) {
-                    update(s => {s.errorModal = "Chyba pri vymazávaní galérie"})
+                    update(s => {s.errorModals.push("Chyba pri vymazávaní galérie")})
                   }
                   await queryCache.invalidateQueries("fetchCategories")
                 }}

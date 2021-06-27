@@ -9,7 +9,7 @@ export type StoreState = {
     idx: number
     open: boolean
   },
-  errorModal: string,
+  errorModals: string[],
 }
 
 export const defaultStore: StoreState = {
@@ -19,7 +19,7 @@ export const defaultStore: StoreState = {
     idx: 0,
     open: false,
   },
-  errorModal: ""
+  errorModals: []
 }
 
 export const useStore = create(combine(defaultStore, (set, get, api) => ({
