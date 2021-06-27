@@ -49,11 +49,11 @@ export const AppModal: React.FC<Props> = ({
 
 // custom modal hook for ez use
 export const useAppModal = (contentFn: () => JSX.Element, onClose?: () => any, width?: number) => {
-  const onModalClosed = () => {
-    if (onClose) onClose()
-    hide()
-  }
   const [show, hide] = useModal(({in: open, onExited}) => {
+    const onModalClosed = () => {
+      if (onClose) onClose()
+      hide()
+    }
     return <AppModal width={width} open={open} onExited={onExited} onClosed={onModalClosed}>
       {contentFn()}
     </AppModal>

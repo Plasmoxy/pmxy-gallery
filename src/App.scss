@@ -39,6 +39,11 @@ body, html {
   box-shadow: none;
 }
 
+.form-control:focus {
+  border: solid #ced4da 1px;
+  box-shadow: none;
+}
+
 .card {
   border: none;
   border-radius: 0.4rem;
