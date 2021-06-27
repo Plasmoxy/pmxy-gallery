@@ -29,7 +29,11 @@ export function PhotosPage() {
     }
     
     for (const file of files) {
-      await gservice.uploadImage(path, file)
+      try {
+        await gservice.uploadImage(path, file)
+      } catch(e) {
+        update(s => {s.errorModals.push("Nahrávať fotky môžu len prihlásení používatelia!")})
+      }
     }
     
     await queryCache.invalidateQueries(["fetchGallery", path])
@@ -58,8 +62,12 @@ export function PhotosPage() {
                 // setLightboxOpen(true)
               }}
               onDelete={async () => {
-                await gservice.deleteImageFromGallery(path, encodeURI(image.name))
-                await queryCache.invalidateQueries(["fetchGallery", path])
+                try {
+                  await gservice.deleteImageFromGallery(path, encodeURI(image.name))
+                  await queryCache.invalidateQueries(["fetchGallery", path])
+                } catch(e) {
+                  update(s => {s.errorModals.push("Obrázok môžu odstrániť len prihlásení používatelia!")})
+                }
               }}
             />
           </Col>

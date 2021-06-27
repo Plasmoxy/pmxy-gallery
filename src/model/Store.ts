@@ -3,7 +3,9 @@ import { combine, devtools } from 'zustand/middleware'
 import produce from 'immer'
 
 export type StoreState = {
-  count: number
+  count: number,
+  uname: string,
+  upass: string,
   lightbox: {
     images: any[]
     idx: number
@@ -14,6 +16,8 @@ export type StoreState = {
 
 export const defaultStore: StoreState = {
   count: 0,
+  uname: "",
+  upass: "",
   lightbox: {
     images: [],
     idx: 0,

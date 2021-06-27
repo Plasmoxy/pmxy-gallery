@@ -31,9 +31,9 @@ function NewCategoryForm({hide}: {hide: () => any}) {
       hide()
     } catch(e) {
       if (e.response?.status === 409) { // key conflict
-        setError("Galéria s takýmto názvom už existuje!")
+        setError("Kategória s takýmto názvom už existuje!")
       } else {
-        setError("Vyskytla sa chyba pri pridaní kategórie.")
+        setError("Vyskytla sa chyba pri pridaní kategórie. Kategórie môžu pridávať len prihlásení používatelia.")
       }
     }
   }
