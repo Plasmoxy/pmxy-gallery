@@ -22,7 +22,7 @@ export const defaultStore: StoreState = {
   errorModals: []
 }
 
-export const useStore = create(combine(defaultStore, (set, get, api) => ({
+export const useStore = create(devtools(combine(defaultStore, (set, get, api) => ({
   set, get, api,
   update: (recipe: (state: StoreState) => void) => set(ss => produce(ss, recipe)),
-})))
+}))))

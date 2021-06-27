@@ -64,7 +64,6 @@ export function GalleriesPage() {
 
   return <>
     <PageHeader title="Kategórie" backButton={false} />
-    <button onClick={() => update(s => {s.errorModals.push("YEET")})}>YET</button>
     
     {qGalleries.isSuccess &&
       <Row>
@@ -78,7 +77,7 @@ export function GalleriesPage() {
                   try {
                     await gservice.deleteGallery(encodeURI(gallery.name))
                   } catch(e) {
-                    update(s => {s.errorModals.push("Chyba pri vymazávaní galérie")})
+                    update(s => {s.errorModals.push("Chyba pri vymazávaní galérie. Galériu môžu vymazať len prihlásení používatelia.")})
                   }
                   await queryCache.invalidateQueries("fetchCategories")
                 }}

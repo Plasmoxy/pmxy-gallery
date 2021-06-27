@@ -2,7 +2,8 @@
 
 // main theme scss header with all necessary imports
 $theme-colors: (
-  "primary": #42C88D
+  "primary": #42C88D,
+  "secondary": #007bff,
 );
 
 @import "node_modules/bootstrap/scss/functions";

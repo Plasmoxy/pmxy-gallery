@@ -17,6 +17,7 @@ import { TestPage } from './pages/TestPage'
 import { PhotosPage } from './pages/PhotosPage'
 import { AppLightbox } from './components/AppLightbox'
 import { ErrorModal } from './components/ErrorModal'
+import { Button } from 'react-bootstrap'
 
 const routes = [
   { path: "/", component: GalleriesPage },
@@ -48,8 +49,23 @@ function App() {
     </div>
 
     <div className="container content-container px-0">
-      <h1 className="d-flex align-items-center text-light" ><img className="pb-1 mr-3" src={cameraSvg} />PMXY GALLERY</h1>
       
+      
+      {/* Header */}
+      <div className="d-flex flex-row">
+        
+        <div className="d-flex flex-row flex-grow-1 text-light">
+          <img className="mt-auto mb-auto pr-3" src={cameraSvg} />
+          <h1 className="mt-auto mb-auto">PMXY GALLERY</h1>
+        </div>
+        
+        <div className="d-flex flex-row flex-grow-1 justify-content-end">
+          <a href="https://github.com/Plasmoxy/pmxy-gallery" className="text-light mx-5 mt-auto mb-auto">Source code</a>
+          <Button variant="secondary">Prihlásiť sa</Button>
+        </div>
+      </div>
+     
+      {/* Routing */}
       {routes.map(r => <Route key={r.path} exact path={r.path}>{({ match }) => (
         <CSSTransition
           in={match != null}
